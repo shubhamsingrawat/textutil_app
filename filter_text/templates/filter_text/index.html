@@ -1,0 +1,54 @@
+{% extends "filter_text/base.html" %}
+{% block content %}
+      <div class='container mt-5'>
+        <form action='removepunch/' method='POST'>
+            {% csrf_token %}
+            <!--  this becuase django provide csrf(Cross Site Request Forgery) this is to ch
+            check the Rquest is made from your system only
+            -->
+            <div class="row">
+              <div class='col-md-8'>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Enter Your Desire text</label>
+                  <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 280px;"></textarea>
+                </div>
+              </div>
+              <div class='col-md-4'>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="custom-control custom-switch">
+                      <input type="checkbox"  name="removepunch" class="custom-control-input" id="customSwitch1">
+                      <label class="custom-control-label" for="customSwitch1">Removepunch</label>
+                  </div>
+                  <div class="custom-control custom-switch">
+                      <input type="checkbox"  name="capitalize" class="custom-control-input" id="customSwitch2">
+                      <label class="custom-control-label" for="customSwitch2">Capitalize</label>
+                    </div>
+                  <div class="custom-control custom-switch">
+                      <input type="checkbox"  name="newlineremove" class="custom-control-input" id="customSwitch3">
+                      <label class="custom-control-label" for="customSwitch3">NewlineRemove</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="custom-control custom-switch">
+                      <input type="checkbox"  name="spaceremover" class="custom-control-input" id="customSwitch4">
+                      <label class="custom-control-label" for="customSwitch4">SpaceRemover</label>
+                    </div>
+                  <!-- <div class="custom-control custom-switch">
+                      <input type="checkbox"  name="wordcount" class="custom-control-input" id="customSwitch5">
+                      <label class="custom-control-label" for="customSwitch5">WordCount</label>
+                  </div> -->
+                  <div class="custom-control custom-switch">
+                      <input type="checkbox"  name="findemail" class="custom-control-input" id="customSwitch6">
+                      <label class="custom-control-label" for="customSwitch6">FindEmail</label>
+                  </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark mt-5" >Analyse it</button>
+      </form>
+    </div>
+{% endblock content %}

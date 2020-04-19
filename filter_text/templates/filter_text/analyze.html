@@ -1,0 +1,14 @@
+{% extends "filter_text/base.html" %}
+  {% block content %}
+      <div class="alert alert-success" role="alert">
+        Success <a href="#" class="alert-link"></a>Your String is analyze
+      </div>
+      <div class='container card'>
+        <h1>
+            Your Analyzed text : {{what}}
+        </h1>
+        <p>
+          <h2><pre>{{analyzedText}}</pre></h2>
+        </p>
+      </div>
+  {% endblock content %}
